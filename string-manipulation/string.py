@@ -10,6 +10,8 @@ pre='''
     this is line under pre
 '''
 
+# Again same cocept if triple signle inner .....
+
 print(name)
 print(sententce)
 print(greet)
