@@ -51,5 +51,46 @@ print('Number-1:',num1)
 print('Number-2',num2)
 
 
+# bolean data type
+
+isDone=True
+
+print(isDone)
+
+
+
+# like javascript null data
+
+amount=None
+print(amount)
+
+
+# mapping data type / dictonary data type  like javascript object
+
+
+student1={
+    "id": 1,
+    "name": "Abu Bakkar",
+    "age": 21,
+    "isBangladeshi": True,
+    
+}
+
+print(student1)
+
+
+# set data type mutable 
+
+unique_num={1,2,3,3,4,5,2,1}
+
+print(unique_num)
+
+# frozen set data type immutable
+
+unique_num2= frozenset([1,2,3,534,22,2,1])
+
+print(unique_num2)
+
+print(type(amount))
 
 

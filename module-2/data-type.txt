@@ -1,0 +1,15 @@
+Immutable: 
+immutable objects cannot be modified after their creation
+
+- Integers
+- Floating-point number
+- Strings
+- tuples 
+- frozen Sets
+
+mutable: 
+mutable can be changed
+
+- list
+- dictionary
+- set
