@@ -1,8 +1,8 @@
 #  All python concepts
 # 1. Variables and Data Types
 # 2. Control Flow (if, for, while)
-# 3. Functions and Modules
 # 4. Data Structures (lists, tuples, dictionaries, sets)
+# 3. Functions and Modules
 # 5. Object-Oriented Programming (classes and objects)
 # 6. Exception Handling (try, except)
 # 7. File Handling (reading and writing files)
@@ -102,10 +102,138 @@ print("Counting finished!",count)
 # do while loop simulation
 names = ["Alice", "Bob", "Charlie"]
 
-while True:
-    name = input("Enter your name: ");
-    if name.capitalize() in names:
-        print("Welcome back,", name)
-        break
+# while True:
+#     name = input("Enter your name: ");
+#     if name.capitalize() in names:
+#         print("Welcome back,", name)
+#         break
+#     else:
+#         print("Name not found, try again.")
+
+
+# Data Structures
+# List
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+print(fruits);
+fruits.remove("banana")
+fruits[0] = "kiwi"
+print(fruits)
+fruits.sort()
+print(fruits)
+fruits.reverse()
+print(fruits)
+print(fruits[1:3]) # Slicing
+print(len(fruits)) # Length
+print(fruits.index("kiwi")) # Index of element
+print("cherry" in fruits) # Membership test
+
+# Tuple
+numbers = (1, 2, 3, 4, 5)
+languages = ("Python", "Java", "C++")
+print(numbers)
+print(numbers[2])
+print(len(numbers))
+print(3 in numbers)
+print(numbers.count(2))
+print(numbers.index(4))
+print(languages)
+print(languages.count("Java"))
+
+# Dictionary
+person = {"name": "Alice", "age": 25, "city": "New York"}
+print(person)
+print(person["name"])
+person["age"] = 30
+print(person)
+person["job"] = "Engineer"
+print(person)
+del person["city"]
+print(person)
+print(person.keys())
+print(person.values())
+print(person.items())
+print(person.get("name"))
+print(person.values())
+person.update({"age": 28, "city": "San Francisco"})
+print(person);
+
+
+# Set
+unique_numbers = {8,1,2,3,4,5,3,5}
+unique_numbers2 = {4,5,6,7,8,9}
+new_numbers = unique_numbers.copy()
+print("new_numbers:", new_numbers)
+# unique_numbers.add(6)
+# unique_numbers.remove(2)
+# unique_numbers.discard(1) # No error if not found
+# unique_numbers.pop()
+print(unique_numbers.union(unique_numbers2))
+print(unique_numbers.intersection(unique_numbers2))
+print(unique_numbers)
+print("Different: ",unique_numbers.difference(unique_numbers2))
+
+
+#  Frozen Set
+frozen_set1 = frozenset([1,2,3,4,5])
+frozen_set2 = frozenset([4,5,6,7,8])
+
+# Same methods as set but no modification methods
+print("Frozen Set Union: ", frozen_set1.union(frozen_set2))
+print("Frozen Set Intersection: ", frozen_set1.intersection(frozen_set2))
+print("Frozen Set Difference: ", frozen_set1.difference(frozen_set2))
+print(frozen_set1)
+
+# Array
+import array
+
+arr = array.array('i', [1, 2, 3, 4])
+
+arr.append(5)          # [1, 2, 3, 4, 5]
+arr.insert(1, 10)      # [1, 10, 2, 3, 4, 5]
+arr.remove(3)          # [1, 10, 2, 4, 5]
+print(arr.pop())       # removes last → 5
+print(arr.index(10))   # 1
+print(arr.count(2))    # 1
+arr.reverse()          # [4, 2, 10, 1]
+print(arr.tolist())    # [4, 2, 10, 1]
+
+
+
+#  Functions
+
+def greet():
+    name = input("Enter your name:")
+    return f"Welcome to python journey, {name.capitalize()}"
+
+# print(greet())
+
+def calculate_area(radius):
+    pi = 3.1416
+    area = pi * (radius ** 2)
+    return round(area, 2)
+
+circle_area = calculate_area(5)
+print("Area of circle with radius 5:", circle_area)
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
     else:
-        print("Name not found, try again.")
+        return n * factorial(n-1)
+    
+print("Factorial of 5:", factorial(5))
+
+
+def fibonacci(n):
+    if(n <= 0):
+        return []
+    if(n == 1):
+        return [0]
+    fib_sequence = [0, 1]
+    for i in range(2, n):
+        next_fib = fib_sequence[i-1] + fib_sequence[i-2]
+        fib_sequence.append(next_fib)
+    return fib_sequence[:n]
+
+print("Fibonacci sequence of 10 terms:", fibonacci(10))
