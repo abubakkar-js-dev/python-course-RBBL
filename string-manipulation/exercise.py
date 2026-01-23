@@ -432,5 +432,31 @@ with open("./string-manipulation/person.json", "r") as person_json_file:
     print("Person Object from JSON file:\n", person_obj)
 
 
+# Working with date time
+import datetime
 
+current_time = datetime.datetime.now()
+formated_date = current_time.strftime("%d-%m-%Y %H:%M:%S")
+print("Formate date: ",formated_date)
+
+# print(current_time)
+# print(current_time.year)
+# print(current_time.month)
+# print(current_time.day)
+# print(current_time.hour)
+# print(current_time.time(),' Time')
+# print(current_time.minute)
+# print(current_time.second)
+# print(current_time.microsecond)
+# print(current_time.date)
+# print(current_time.weekday)
+
+
+# Working with math
+import math
+
+print(math.sqrt(49))
+print(math.floor(4.53))
+print(math.ceil(4.53))
+print(math.pow(2,4))
 
