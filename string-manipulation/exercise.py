@@ -237,3 +237,45 @@ def fibonacci(n):
     return fib_sequence[:n]
 
 print("Fibonacci sequence of 10 terms:", fibonacci(10))
+
+square = lambda x: x ** 2
+print("Square of 7 using lambda:", square(7))
+
+def outer_function(msg):
+    def inner_function():
+        return f"Inner says: {msg}"
+    return inner_function()
+
+print(outer_function("Hello from nested function!"))
+
+x = 10
+
+def modify_global():
+    global x
+    x = 20
+modify_global()
+print("Modified global x:", x)
+
+# Decorators
+def decorator_function(original_function):
+    def wrapper_function():
+        print("Wrapper executed before {}".format(original_function.__name__))
+        return original_function()
+    return wrapper_function
+
+@decorator_function
+def display():
+    print("Display function executed")
+display()
+
+# with open("./string-manipulation/hello.txt", "w") as file:
+#     file.write("Hello, World!\nWelcome to Python file handling.")
+
+# with open("./string-manipulation/hello.txt", "r") as file:
+#     content = file.read()
+#     print("File Content:\n", content)
+
+import os
+
+# os.rename("./string-manipulation/hello.txt", "./string-manipulation/greetings.txt");
+# os.remove("./hello.c");
