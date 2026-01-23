@@ -314,3 +314,63 @@ import zipfile
 # archive =  shutil.make_archive("./string-manipulation/archive_folder","zip","./string-manipulation/new_folder")
 # print("Archive created:", archive)
 
+
+#  working with CSV files
+import csv
+
+students = [
+    {"id": 1, "name": "Alice Johnson", "age": 20, "grade": "A", "major": "Computer Science"},
+    {"id": 2, "name": "Bob Smith", "age": 22, "grade": "B+", "major": "Economics"},
+    {"id": 3, "name": "Charlie Brown", "age": 19, "grade": "A-", "major": "Mathematics"},
+    {"id": 4, "name": "Diana Prince", "age": 21, "grade": "B", "major": "History"},
+    {"id": 5, "name": "Ethan Hunt", "age": 23, "grade": "C+", "major": "Physics"},
+    {"id": 6, "name": "Fiona Gallagher", "age": 20, "grade": "A", "major": "Biology"},
+    {"id": 7, "name": "George Lopez", "age": 22, "grade": "B-", "major": "Chemistry"},
+    {"id": 8, "name": "Hannah Baker", "age": 19, "grade": "A+", "major": "English"},
+]
+
+fileName = "./string-manipulation/students.csv"
+
+header = students[0].keys()
+print("Header:", header)
+
+# with open(fileName, 'w', newline='') as csvfile:
+#     writer = csv.DictWriter(csvfile, fieldnames=header)
+#     writer.writeheader()
+#     writer.writerows(students)
+
+# print("Csv file created:", fileName);
+
+# with open(fileName, 'r') as csvfile:
+#     content = csv.reader(csvfile)
+#     for row in content:
+#         print("Row:", row)
+    
+
+
+# Exception Handling
+
+try:
+    with open("./string-manipulation/none.txt", "r") as file:
+        content = file.read()
+        result = 10 / int(content)
+        print("Result:", result)
+
+# except FileNotFoundError:
+#     print("Error: The file was not found.")
+# except ValueError:
+#     print("Error: Could not convert data to an integer.")
+# except TypeError:
+#     print("Error: Invalid type encountered.")
+# except ZeroDivisionError:
+#     print("Error: Division by zero is not allowed.")
+except Exception as e:
+    print("An unexpected error occurred:", str(e))
+
+finally:
+    print("Execution completed.")
+
+
+
+
+
