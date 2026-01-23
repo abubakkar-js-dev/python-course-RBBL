@@ -301,16 +301,11 @@ print("Current Working Directory:", os.getcwd())
 #  zip and unzip files
 import zipfile
 
-# with zipfile.ZipFile("./string-manipulation/test.zip","w") as zipf:
-#     zipf.write("./string-manipulation/greetings.txt", arcname= "greetings.txt")
-#     zipf.write("./string-manipulation/exercise.py", arcname= "exercise.py")
+with zipfile.ZipFile("./string-manipulation/test.zip","w") as zipf:
+    zipf.write("./string-manipulation/greetings.txt", arcname= "greetings.txt")
+    zipf.write("./string-manipulation/exercise.py", arcname= "exercise.py")
+
+    
 
 
-# with zipfile.ZipFile("./string-manipulation/test.zip","r") as zipf:
-#     zipf.extractall("./string-manipulation/unzipped_folder")
-
-# import shutil
-
-# archive =  shutil.make_archive("./string-manipulation/archive_folder","zip","./string-manipulation/new_folder")
-# print("Archive created:", archive)
 
