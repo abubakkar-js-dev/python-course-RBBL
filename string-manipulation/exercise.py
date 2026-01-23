@@ -373,4 +373,64 @@ finally:
 
 
 
+# working with json
+import json
+
+person = {
+  "name": "Emily Johnson",
+  "age": 29,
+  "gender": "Female",
+  "email": "emily.johnson@example.com",
+  "phone": "+1-202-555-0147",
+  "address": {
+    "street": "123 Maple Street",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101"
+  },
+  "is_student": False,
+  "skills": ["Python", "Data Analysis", "Machine Learning"],
+  "hobbies": ["Reading", "Hiking", "Photography"]
+}
+
+# # Object to JSON string
+# person_json = json.dumps(person, indent=4)
+# print("JSON String:\n", person_json)
+
+
+## JSON string to Object
+# person_json_str = ''' {
+#   "name": "Emily Johnson",
+#   "age": 29,
+#   "gender": "Female",
+#   "email": "emily.johnson@example.com",
+#   "phone": "+1-202-555-0147",
+#   "address": {
+#     "street": "123 Maple Street",
+#     "city": "Seattle",
+#     "state": "WA",
+#     "zip": "98101"
+#   },
+#   "is_student": false,
+#   "skills": ["Python", "Data Analysis", "Machine Learning"],
+#   "hobbies": ["Reading", "Hiking", "Photography"]
+# } '''
+
+# person_obj = json.loads(person_json_str)
+# print("Person Object:\n", person_obj)
+
+
+# Person object to json file
+
+# with open("./string-manipulation/person.json", "w") as person_json_file:
+#     json.dump(person, person_json_file, indent=4)
+
+
+# Person json file to object
+with open("./string-manipulation/person.json", "r") as person_json_file:
+    person_obj = json.load(person_json_file)
+    print("Person Object from JSON file:\n", person_obj)
+
+
+
 

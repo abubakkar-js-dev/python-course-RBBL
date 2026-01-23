@@ -1,0 +1,24 @@
+{
+    "name": "Emily Johnson",
+    "age": 29,
+    "gender": "Female",
+    "email": "emily.johnson@example.com",
+    "phone": "+1-202-555-0147",
+    "address": {
+        "street": "123 Maple Street",
+        "city": "Seattle",
+        "state": "WA",
+        "zip": "98101"
+    },
+    "is_student": false,
+    "skills": [
+        "Python",
+        "Data Analysis",
+        "Machine Learning"
+    ],
+    "hobbies": [
+        "Reading",
+        "Hiking",
+        "Photography"
+    ]
+}
