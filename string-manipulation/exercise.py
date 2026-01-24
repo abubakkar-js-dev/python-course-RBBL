@@ -3,9 +3,9 @@
 # 2. Control Flow (if, for, while)
 # 4. Data Structures (lists, tuples, dictionaries, sets)
 # 3. Functions and Modules
-# 5. Object-Oriented Programming (classes and objects)
-# 6. Exception Handling (try, except)
-# 7. File Handling (reading and writing files)
+# 5. Exception Handling (try, except)
+# 6. File Handling (reading and writing files)
+# 7. Object-Oriented Programming (classes and objects)
 # 8. Libraries and Frameworks (e.g., NumPy, Pandas, Flask
 # 9. Debugging and Testing (using pdb, unittest)
 # 10. Virtual Environments and Package Management (venv, pip)
@@ -460,3 +460,136 @@ print(math.floor(4.53))
 print(math.ceil(4.53))
 print(math.pow(2,4))
 
+
+date_1 = datetime.datetime(2025,8,22)
+date_2 = datetime.datetime(2026,1,24)
+
+difference = date_2 - date_1
+print("Difference between dates:", difference.days, "days")
+
+new_date = date_1 + datetime.timedelta(days=20)
+print("New date after adding 20 days:", new_date.strftime("%d-%m-%Y"))
+
+
+
+
+# OOP - Classes and Objects
+class Calculator:
+    def __init__(self,a,b):
+        self.a = a
+        self.b = b
+    def add(self):
+        return self.a + self.b
+    def substract(self):
+        return self.a - self.b
+    def multiply(self):
+        return self.a * self.b
+    def divide(self):
+        if self.b != 0:
+            return self.a / self.b
+        else:
+            return "Error: Division by zero"
+        
+
+calc = Calculator(20,8)
+calc2 = Calculator(15,3)
+print("Addition:", calc.add())
+print("Substraction:", calc.substract())
+print("Multiplication:", calc.multiply())
+print("Division:", calc.divide())
+
+print(calc2.add())
+
+
+class MyObject:
+    x = 10
+    y = 20
+    def __init__(self,a,b):
+        self.a = a
+        self.x = b
+    def addSum(self):
+        return self.a + self.x + self.y
+
+obj = MyObject(100, 5)
+print("Sum from MyObject:", obj.addSum())
+
+
+
+# Single in heritance
+class GrandParent:
+    family_name = "Mondol Bari"
+    def show_family_name(self):
+        return self.family_name
+
+class Parent(GrandParent):
+    bank_amount = 100000
+    @staticmethod
+    def static_show_bank_amount():
+        return Parent.bank_amount
+    def show_bank_amount(self):
+        return self.bank_amount
+
+
+class Child(Parent):
+    def __init__(self, name):
+        self.name = name
+    def display_info(self):
+        return f"Child Name: {self.name}, Inherited Bank Amount: {self.show_bank_amount()}"
+    
+
+child = Child("Alice")
+# print(child.display_info())
+# print(child.show_bank_amount())
+# print(Parent.bank_amount)
+# print(Child.bank_amount)
+# print(Parent.static_show_bank_amount())
+
+# Multi-level Inheritance (GrandParent -> Parent -> Child) demonstrated above.
+print("Family Name from Child:", child.show_family_name())
+
+
+#  Multiple Inheritance
+class Father:
+    def father_property(self):
+        return "This is father Property."
+
+class Mother:
+    def mother_property(self):
+        return "This is mother Property."
+
+class Son_property(Father, Mother):
+    pass
+    # def son_info(self):
+    #     return "This is son class method."
+
+son = Son_property()
+print(son.father_property())
+print(son.mother_property())
+# print(son.son_info())
+
+# Accecing in class methods and properties
+
+"""
+1. access when parents have constructor but child has no constructor
+2. access when child has constructor but parents have no constructor
+3. access when both parents and child have constructors
+4. access parent class methods and properties using super()
+
+"""
+
+class A:
+    a = 10
+    b = 20
+    print("Parent class properties initialized.")
+
+class B(A):
+    def __init__(self):
+        super().__init__()
+        print("Child constructor called.")
+        self.x = 100
+        self.y = 200
+
+# result = B()
+result2 = A()
+
+print("Accessing parent class properties from child instance:", result2.a, result2.b)
