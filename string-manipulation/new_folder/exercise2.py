@@ -117,3 +117,72 @@ electric_car = ElectricCar()
 # print(electric_car.get_electric_details())
 print(electric_car._get_details())  # not recommended but possible
 
+#  gatter and setter
+
+class Person:
+    __NAME  = "Md Rafi"
+    @property
+    def name(self):
+        return self.__NAME
+    @name.setter
+    def name(self, new_name):
+        self.__NAME = new_name
+
+person1 = Person()
+# GET
+print(person1.name)
+    
+# SET
+person1.name = "Ahmed Rafi"
+print(person1.name)
+
+# private attribute access using name mangling
+
+class Company:
+    __company_name = "Tech Solutions"
+    def get_company_name(self):
+        return self.__company_name
+    
+company1 = Company()
+# Accessing private attribute using name mangling
+print(company1._Company__company_name)
+
+# encapsulaion using Bank application
+
+class BankAccount:
+    __balance = 78000
+
+    # Deposit
+
+    def deposit(self,dep_amount):
+        if dep_amount <= 0:
+            return "Invalid Amount"
+        
+        self.__balance += dep_amount
+        print("Deposit Successfull")
+
+
+    # Withdraw
+
+    def withdraw(self,amount):
+        if amount > 0 and amount <= self.__balance:
+            self.__balance -= amount
+            print(f"Withdraw {amount} successfull.")
+        else:
+            print("Insufficient Ballance")
+
+    # Check balance
+
+    def check_balance(self):
+        return self.__balance
+    
+
+    
+account1 = BankAccount()
+print(account1.check_balance())
+account1.deposit(720)
+print(account1.check_balance())
+account1.withdraw(18000)
+print(account1.check_balance())
+
+
