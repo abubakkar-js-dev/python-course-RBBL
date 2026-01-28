@@ -21,6 +21,7 @@ def price_calculator(products):
 
         print(f"{product['name']}: {item_total}");
     print (f"Total: {grand_total}")
+    return grand_total;
 
 
 price_calculator(products);
