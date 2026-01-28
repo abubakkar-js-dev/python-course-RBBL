@@ -1,4 +1,3 @@
-from pprint import pprint
 products = [
     {"name": "Laptop", "price": 50000, "quantity": 2},
     {"name": "Mouse", "price": 500, "quantity": 5},
@@ -20,7 +19,7 @@ def price_calculator(products):
 
         grand_total += item_total
 
-        print(f"{product['name']}: {product['price']}");
+        print(f"{product['name']}: {item_total}");
     print (f"Total: {grand_total}")
 
 
